@@ -23,6 +23,8 @@ FACEBOOK: https://www.facebook.com/themefisher
   <meta charset="utf-8">
   <title>Manisya | Teman Isyarat </title>
 
+  <!-- TEMPLATE ATAS-->
+
   <!-- Mobile Specific Metas
   ================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +34,7 @@ FACEBOOK: https://www.facebook.com/themefisher
   <meta name="generator" content="Themefisher Small Apps Template v1.0">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="/static/images/logo_tangan.png" />
   
   <!-- PLUGINS CSS STYLE -->
   <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
@@ -52,72 +54,34 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="/static/images/logo.png" alt="logo"></a>
+	<a class="navbar-brand" href="index.html"><img src="static/images/logo_full.png" alt="logo"  height="60" width="170"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="ti-menu"></span>
     </button>
+	
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Home
-            <span><i class="ti-angle-down"></i></span>
-          </a>
-          <!-- Dropdown list -->
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item active" href="index.html">Homepage</a></li>
-            <li><a class="dropdown-item" href="homepage-2.html">Homepage 2</a></li>
-            <li><a class="dropdown-item active3" href="homepage-3.html">Homepage 3</a></li>
-
-            <li class="dropdown dropdown-submenu dropright">
-              <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdown0301">
-                <li><a class="dropdown-item" href="index.html">Submenu 11</a></li>
-                <li><a class="dropdown-item" href="index.html">Submenu 12</a></li>
-              </ul>
-            </li>
-          </ul>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('landingpage')}}" data-toggle="dropdown">Home
+          </a> 
         </li>
-        <li class="nav-item dropdown @@pages">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Pages
-            <span><i class="ti-angle-down"></i></span>
+        <li class="nav-item ">
+          <a class="nav-link " href="{{url_for('blog')}}" >Blogs
           </a>
-          <!-- Dropdown list -->
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item @@team" href="team.html">Team</a></li>
-            <li><a class="dropdown-item @@career" href="career.html">Career</a></li>
-            <li><a class="dropdown-item @@blog" href="blog.html">Blog</a></li>
-            <li><a class="dropdown-item @@blogSingle" href="blog-single.html">Blog Single</a></li>
-            <li><a class="dropdown-item @@privacy" href="privacy-policy.html">Privacy</a></li>
-            <li><a class="dropdown-item @@faq" href="FAQ.html">FAQ</a></li>
-            <li><a class="dropdown-item" href="sign-in.html">Sign In</a></li>
-            <li><a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
-            <li><a class="dropdown-item" href="404.html">404</a></li>
-            <li><a class="dropdown-item" href="comming-soon.html">Coming Soon</a></li>
-
-            <li class="dropdown dropdown-submenu dropleft">
-              <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                <li><a class="dropdown-item" href="index.html">Submenu 21</a></li>
-                <li><a class="dropdown-item" href="index.html">Submenu 22</a></li>
-              </ul>
-            </li>
-          </ul>
         </li>
         <li class="nav-item @@about">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="{{url_for('faq')}}">FAQ</a>
         </li>
         <li class="nav-item @@contact">
-          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+ <!-- TEMPLATE ATAS END-->
 
 <!--====================================
 =            Hero Section            =
@@ -145,8 +109,8 @@ FACEBOOK: https://www.facebook.com/themefisher
 		<div class="row align-items-center">
 			<div class="col-md-6 order-2 order-md-1 text-center text-md-left">
 				<h1 class="text-white font-weight-bold mb-4">Welcome to Teman Isyarat!</h1>
-				<p class="text-white mb-5">Menerjemahkan bahasa isyarat ke bahasa indonesia.</p>
-				<a href="FAQ.html" class="btn btn-main-md">Read More</a>
+				<p class="text-white mb-5">Powerful app for translating sign language to text !</p>
+				<a href="{{url_for('faq') }}" class="btn btn-main-md">Start Manisya</a>
 			</div>
 			<div class="col-md-6 text-center order-1 order-md-2">
 				<img class="img-fluid" src="/static/images/mobile.png" alt="screenshot">
@@ -155,189 +119,30 @@ FACEBOOK: https://www.facebook.com/themefisher
 	</div>
 </section>
 <!--====  End of Hero Section  ====-->
-
 <section class="section pt-0 position-relative pull-top">
 	<div class="container">
 		<div class="rounded shadow p-5 bg-white">
 			<div class="row">
 				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
 					<i class="ti-paint-bucket text-primary h1"></i>
-					<h3 class="mt-4 text-capitalize h5 ">Algoritma Deep Learning</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
+					<h3 class="mt-4 text-capitalize h5 ">Deep Learning Algorithm</h3>
+					<p class="regular text-muted">This web app uses effective deep learning to predict sign language from camera.</p>
 				</div>
 				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
 					<i class="ti-shine text-primary h1"></i>
-					<h3 class="mt-4 text-capitalize h5 ">Gratis</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
+					<h3 class="mt-4 text-capitalize h5 ">Free </h3>
+					<p class="regular text-muted">Manisya will remain freeware forever without any limitation</p>
 				</div>
 				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
 					<i class="ti-thought text-primary h1"></i>
-					<h3 class="mt-4 text-capitalize h5 ">creative content</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
+					<h3 class="mt-4 text-capitalize h5 ">Indonesian Sign Language</h3>
+					<p class="regular text-muted">Manisya currently support indonesian sign language.</p>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!--==================================
-=            Feature Grid            =
-===================================-->
-<section class="feature section pt-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 ml-auto justify-content-center">
-				<!-- Feature Mockup -->
-				<div class="image-content" data-aos="fade-right">
-					<img class="img-fluid" src="/static/images/feature/feature-new-01.jpg" alt="iphone">
-				</div>
-			</div>
-			<div class="col-lg-6 mr-auto align-self-center">
-				<div class="feature-content">
-					<!-- Feature Title -->
-					<h2>Increase your productivity with <a
-							href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small Apps</a></h2>
-					<!-- Feature Description -->
-					<p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat.</p>
-				</div>
-				<!-- Testimonial Quote -->
-				<div class="testimonial">
-					<p>
-						"InVision is a window into everything that's being designed at Twitter. It gets all of our best work in one
-						place."
-					</p>
-					<ul class="list-inline meta">
-						<li class="list-inline-item">
-							<img src="/static/images/testimonial/feature-testimonial-thumb.jpg" alt="">
-						</li>
-						<li class="list-inline-item">Jonathon Andrew , Themefisher.com</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="feature section pt-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 ml-auto align-self-center">
-				<div class="feature-content">
-					<!-- Feature Title -->
-					<h2>Increase your productivity with <a
-							href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small Apps</a></h2>
-					<!-- Feature Description -->
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-						ea commodo consequat.</p>
-				</div>
-				<!-- Testimonial Quote -->
-				<div class="testimonial">
-					<p>
-						"InVision is a window into everything that's being designed at Twitter. It gets all of our best work in one
-						place."
-					</p>
-					<ul class="list-inline meta">
-						<li class="list-inline-item">
-							<img src="/static/images/testimonial/feature-testimonial-thumb.jpg" alt="">
-						</li>
-						<li class="list-inline-item">Jonathon Andrew , Themefisher.com</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-6 mr-auto justify-content-center">
-				<!-- Feature mockup -->
-				<div class="image-content" data-aos="fade-left">
-					<img class="img-fluid" src="/static/images/feature/feature-new-02.jpg" alt="ipad">
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--====  End of Feature Grid  ====-->
-
-<!--==============================
-=            Services            =
-===============================-->
-<section class="service section bg-gray">
-	<div class="container-fluid p-0">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="section-title">
-					<h2>An Interface For Lifestyle</h2>
-					<p><a href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small Apps</a> makes
-						it easy to stay on top of your Life Style. No late tasks. No gimmicks.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row no-gutters">
-			<div class="col-lg-6 align-self-center">
-				<!-- Feature Image -->
-				<div class="service-thumb left" data-aos="fade-right">
-					<img class="img-fluid" src="/static/images/feature/iphone-ipad.jpg" alt="iphone-ipad">
-				</div>
-			</div>
-			<div class="col-lg-5 mr-auto align-self-center">
-				<div class="service-box">
-					<div class="row align-items-center">
-						<div class="col-md-6 col-xs-12">
-							<!-- Service 01 -->
-							<div class="service-item">
-								<!-- Icon -->
-								<i class="ti-bookmark"></i>
-								<!-- Heading -->
-								<h3>Easy Prototyping</h3>
-								<!-- Description -->
-								<p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui</p>
-							</div>
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<!-- Service 01 -->
-							<div class="service-item">
-								<!-- Icon -->
-								<i class="ti-pulse"></i>
-								<!-- Heading -->
-								<h3>Sensor Bridge</h3>
-								<!-- Description -->
-								<p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui</p>
-							</div>
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<!-- Service 01 -->
-							<div class="service-item">
-								<!-- Icon -->
-								<i class="ti-bar-chart"></i>
-								<!-- Heading -->
-								<h3>Strategist</h3>
-								<!-- Description -->
-								<p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui</p>
-							</div>
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<!-- Service 01 -->
-							<div class="service-item">
-								<!-- Icon -->
-								<i class="ti-panel"></i>
-								<!-- Heading -->
-								<h3>Art Direction</h3>
-								<!-- Description -->
-								<p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--====  End of Services  ====-->
-
 
 <!--=================================
 =            Video Promo            =
@@ -348,12 +153,11 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-lg-12">
 				<div class="content-block">
 					<!-- Heading -->
-					<h2>Watch Our Promo Video</h2>
+					<h2>Watch Our Demo Video</h2>
 					<!-- Promotional Speech -->
-					<p>Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et,
-						porttitor at sem. Vivamus </p>
+					<p>Manisya is commited to help deaf people community.</p>
 					<!-- Popup Video -->
-					<a data-fancybox href="https://www.youtube.com/watch?v=jrkvirglgaQ">
+					<a data-fancybox href="https://www.youtube.com/watch?v=BluUBmn3esA">
 						<i class="ti-control-play video"></i>
 					</a>
 				</div>
@@ -384,7 +188,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 							</p>
 							<!-- Person Thumb -->
 							<div class="image">
-								<img src="/static/images/testimonial/feature-testimonial-thumb.jpg" alt="image">
+								<img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
 							</div>
 							<!-- Name and Company -->
 							<cite>Abraham Linkon , Themefisher.com</cite>
@@ -402,7 +206,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 							</p>
 							<!-- Person Thumb -->
 							<div class="image">
-								<img src="/static/images/testimonial/feature-testimonial-thumb.jpg" alt="image">
+								<img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
 							</div>
 							<!-- Name and Company -->
 							<cite>Abraham Linkon , Themefisher.com</cite>
@@ -420,7 +224,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 							</p>
 							<!-- Person Thumb -->
 							<div class="image">
-								<img src="/static/images/testimonial/feature-testimonial-thumb.jpg" alt="image">
+								<img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
 							</div>
 							<!-- Name and Company -->
 							<cite>Abraham Linkon , Themefisher.com</cite>
@@ -438,7 +242,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 							</p>
 							<!-- Person Thumb -->
 							<div class="image">
-								<img src="/static/images/testimonial/feature-testimonial-thumb.jpg" alt="image">
+								<img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
 							</div>
 							<!-- Name and Company -->
 							<cite>Abraham Linkon , Themefisher.com</cite>
@@ -451,37 +255,6 @@ FACEBOOK: https://www.facebook.com/themefisher
 </section>
 <!--====  End of Testimonial  ====-->
 
-<section class="call-to-action-app section bg-blue">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>It's time to change your mind</h2>
-				<p>Download over 2 million humans .Get <a href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small Apps</a> free forever!
-					<br>We say you won’t look back.</p>
-				<ul class="list-inline">
-					<li class="list-inline-item">
-						<a href="" class="btn btn-rounded-icon">
-							<i class="ti-apple"></i>
-							Iphone
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a href="" class="btn btn-rounded-icon">
-							<i class="ti-android"></i>
-							Android
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a href="" class="btn btn-rounded-icon">
-							<i class="ti-microsoft-alt"></i>
-							Windows
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
 
 <!--============================
 =            Footer            =
@@ -492,7 +265,7 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="row">
         <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
           <div class="block">
-            <a href="index.html"><img src="/static/images/logo-alt.png" alt="footer-logo"></a>
+            <a href="{{ url_for('landingpage') }}"><img src="static/images/logo_tangan.png" width="100" height="100" alt="footer-logo"></a>
             <!-- Social Site Icons -->
             <ul class="social-icon list-inline">
               <li class="list-inline-item">
@@ -561,11 +334,7 @@ FACEBOOK: https://www.facebook.com/themefisher
     </div>
   </div>
   <div class="text-center bg-dark py-4">
-    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
-  </div>
-
-	<div class="text-center bg-dark py-1">
-   <small> <p>Distributed By <a href="https://themewagon.com/">Themewagon</a></p></small class="text-secondary">
+    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Manisya | Teman Isyarat</a></small class="text-secondary">
   </div>
 </footer>
 

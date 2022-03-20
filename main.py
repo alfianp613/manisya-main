@@ -20,7 +20,13 @@ def contact():
 
 @app.route("/faq/")
 def faq():
-    return render_template("faq.html")
+    return render_template("FAQ.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html")
+
+
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8000, debug=True)
